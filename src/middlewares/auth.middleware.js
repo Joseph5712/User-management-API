@@ -30,9 +30,7 @@ function requireAuth(req, res, next) {
 
         next();
     } catch (error) {
-        const err = new Error("Unauthorized");
-        err.statusCode = 401;
-        return next(err);
+        return next(error);
     }
 }
 
